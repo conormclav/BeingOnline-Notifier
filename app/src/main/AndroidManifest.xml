@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.beingonline.notifier" >
+
+
+
+    <!-- Internet permission -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Permissions required by the sync adapter -->
+    <uses-permission
+        android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission
+        android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission
+        android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+
+    <!-- Requires this permission to check the network state       -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/beinglogo"
+        android:label="BeingOnline Service Monitor"
+        >
+        <activity
+            android:name=".MainActivity"
+            android:label="BeingOnline Monitor"
+            android:icon="@drawable/ic_logo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+
+        <activity
+            android:name=".myBackgroundActivity"
+            android:label="BeingOnline Monitor"
+            android:icon="@drawable/ic_logo"
+            android:allowBackup="true"
+            android:screenOrientation="landscape"
+            >
+        </activity>
+
+
+
+
+        <activity
+            android:name=".Splash"
+            android:label="BeingOnline Service Monitor" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+       <service android:name=".MyIntentService"></service>
+
+
+        <!--<activity android:name=".DetailsActivity"-->
+            <!--android:exported="true"-->
+         <!--/>-->
+
+
+    </application>
+
+</manifest>
